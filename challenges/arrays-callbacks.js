@@ -61,8 +61,8 @@ The zoos want to display both the scientific name and the animal name in front o
 */
 const displayNames = [];
 zooAnimals.forEach(element => {
-    let value = `Name: ${element.animal_name}, Scientific: ${element.scientific_name}.`;
-    displayNames.push(value);
+    let value = `Name: ${element.animal_name}, Scientific: ${element.scientific_name}.`; // Create a new string
+    displayNames.push(value); // Put the new string in the array as the last item
 });
 console.log(displayNames);
 
@@ -72,7 +72,7 @@ The zoos need a list of all their animal's names (animal_name only) converted to
 
 */
 
-const lowCaseAnimalNames = zooAnimals.map(animal => animal.animal_name.toLowerCase());
+const lowCaseAnimalNames = zooAnimals.map(animal => animal.animal_name.toLowerCase()); // map returns an array that is equal length to the original array but has only the animal names lower cased
 console.log(lowCaseAnimalNames);
 
 /* Request 3: .filter() 
@@ -80,7 +80,7 @@ console.log(lowCaseAnimalNames);
 The zoos are concerned about animals with a lower population count. Using filter, create a new array of objects called lowPopulationAnimals which contains only the animals with a population less than 5.
 
 */
-const lowPopulationAnimals = zooAnimals.filter(animal => animal.population < 5);
+const lowPopulationAnimals = zooAnimals.filter(animal => animal.population < 5); // filter returns an array of only those items that are true
 console.log(lowPopulationAnimals);
 
 /* Request 4: .reduce() 
@@ -88,7 +88,7 @@ console.log(lowPopulationAnimals);
 The zoos need to know their total animal population across the United States. Find the total population from all the zoos using the .reduce() method. Remember the reduce method takes two arguments: a callback (which itself takes two args), and an initial value for the count.
 
 */
-let populationTotal = zooAnimals.reduce((previous, current) => {
+let populationTotal = zooAnimals.reduce((previous, current) => { // reduce return 1 value, in this case we are returning the sum of all values
     return previous + current.population;
 }, 0);
 console.log(populationTotal);
@@ -102,7 +102,7 @@ console.log(populationTotal);
  * The last parameter accepts a callback
  * The consume function should return the invocation of cb, passing a and b into cb as arguments
  */
-function consume(a, b, cb) {
+function consume(a, b, cb) { // this is the higher order function
     return cb(a, b);
 }
 
